@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeViewAccessibilityFocused|typeWindowStateChanged|typeWindowContentChanged|typeNotificationStateChanged"
+    android:accessibilityFeedbackType="feedbackAllMask"
+    android:notificationTimeout="10"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_description"
+    android:packageNames="com.ss.android.article.news,com.ss.android.article.video,com.ss.android.ugc.aweme,com.meelive.ingkee,com.inke.trivia,com.chongdingdahui.app,com.huajiao"/>

@@ -1,0 +1,269 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+-dontskipnonpubliclibraryclassmembers
+-dontoptimize
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+-dontpreverify
+-verbose
+-optimizations !field/removal/writeonly,!field/marking/private,!class/merging/*,!code/allocation/variable
+
+-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+   public *;
+}
+
+-keepattributes Signature
+# For using GSON @Expose annotation
+-keepattributes *Annotation*
+-keepattributes *JavascriptInterface*
+
+-keep public class android.net.http.SslError
+-keep public class android.webkit.WebViewClient
+
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.** { *; }
+
+# Explicitly preserve all serialization members. The Serializable interface
+# is only a marker interface, so it wouldn't save them.
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+# Preserve all native method names and the names of their classes.
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+-keepclasseswithmembernames class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembernames class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+# Preserve static fields of inner classes of R classes that might be accessed
+# through introspection.
+-keepclassmembers class **.R$* {
+  public static <fields>;
+}
+
+# Preserve the special static methods that are required in all enumeration classes.
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep public class * {
+    public protected *;
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+# Application classes that will be serialized/deserialized over Gson
+-keep class com.yunmall.ymsdk.net.** { *;
+ public protected private *;}
+-keep class com.yunmall.ymsdk.net.http.response.** { *;
+ public protected private *;}
+-keep class * extends com.yunmall.ymsdk.net.model.BaseObject { *;
+ public protected private *;}
+-keep class com.yunmall.ymsdk.net.model.** { *;
+ public protected private *;}
+
+#for qq sdk
+-keep class com.tencent.**
+-keep class com.tencent.open.TDialog$* {*;}
+-keep class com.tencent.open.PKDialog
+-keep class com.tencent.open.PKDialog {*;}
+-keep class com.tencent.open.PKDialog$*
+-keep class com.tencent.open.PKDialog$* {*;}
+
+-dontwarn com.handmark.pulltorefresh.library.**
+-keep class com.handmark.pulltorefresh.library.** {
+    *;
+}
+
+-dontwarn com.nostra13.universalimageloader.**
+-keep class com.nostra13.universalimageloader.** {
+	*;
+}
+
+#支付相关
+-dontwarn com.unionpay.**
+-keep class com.unionpay.** {
+    *;
+}
+
+#-dontwarn com.alipay.android.app.**
+#-keep class com.alipay.android.app.** {
+#    *;
+#}
+
+-dontwarn com.baidu.**
+-keep class com.baidu.**
+
+-dontwarn com.sina.**
+-keep class com.sina.**
+
+-dontwarn org.joda.**
+-keep class org.joda.**
+
+-dontwarn com.yunmall.ymsdk.utility.jodatime.**
+-keep class com.yunmall.ymsdk.utility.jodatime.**
+
+-dontwarn demo.**
+-dontwarn java.beans.**
+-dontwarn java.awt.**
+-dontwarn javax.swing.**
+-keep class demo.Pinyin4jAppletDemo.** {
+    *;
+}
+-dontwarn com.hp.hpl.sparta.**
+-keep class com.hp.hpl.sparta.** {
+    *;
+}
+-dontwarn net.sourceforge.pinyin4j.**
+-keep class net.sourceforge.pinyin4j.** {
+    *;
+}
+
+#for weixin sdk
+-keep class com.tencent.mm.sdk.openapi.WXMediaMessage { *;}
+-keep class com.tencent.mm.sdk.openapi.** implements com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject {*;}
+
+#小米推送
+#这里com.xiaomi.mipushdemo.DemoMessageRreceiver改成app中定义的完整类名
+-keep class com.yunmall.ymctoc.receiver.MiPushMessageReceiver {*;}
+#-keepclasseswithmembernames class com.xiaomi.**{*;}
+#-keep public class * extends com.xiaomi.mipush.sdk.PushMessageReceiver
+
+
+#for alipay sdk 新sdk不需要进行-libraryjars声明
+#-libraryjars libs/alipaysdk.jar
+#-libraryjars libs/MobileSecSdk.jar
+#-libraryjars libs/utdid4all-1.0.4.jar
+#-keep class com.alipay.android.app.IAlixPay{*;}
+#-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+#-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+#-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+#-keep class com.alipay.sdk.app.PayTask{ public *;}
+#-keep class com.alipay.sdk.auth.AlipaySDK{ public *;}
+#-keep class com.alipay.sdk.auth.APAuthInfo{ public *;}
+#-keep class com.alipay.mobilesecuritysdk.*
+#-keep class com.ut.*
+
+
+#-libraryjars libs/alipaySdk-20170407.jar
+
+-keep class com.alipay.android.app.IAlixPay{*;}
+-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+-keep class com.alipay.sdk.app.PayTask{ public *;}
+-keep class com.alipay.sdk.app.AuthTask{ public *;}
+
+#for amap sdk
+-keep class com.amap.api.**  {*;}
+-keep class com.autonavi.**  {*;}
+-keep class com.a.a.**  {*;}
+
+# for webview
+-keep class com.yunmall.ymctoc.ui.activity.WebViewActivity
+
+#for eventbus
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+}
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
+# Only required if you use AsyncExecutor
+-keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
+-keepclassmembers class com.yunmall.ymctoc.ui.activity.WebViewActivity$LqBannerShareInterface {
+  public *;
+}
+
+-keep class com.qiniu.**{*;}
+-keep class com.qiniu.**{public <init>();}
+-ignorewarnings
+
+-keep class com.ishumei.dfp.SMSDK { *;}
+
+
+
+
+
+#众安分期
+-keep interface com.zhongan.finance.model.UnMix
+-keep public class * implements com.zhongan.finance.model.UnMix { *; }
+-keep class * implements java.io.Serializable { *;}
+
+#okhttp
+-dontwarn okio.**
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault
+
+#保护注解
+#忽略警告
+-ignorewarning
+-keepattributes *Annotation*
+-keepattributes Signature
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.** { *; }
+-keep class io.realm.**{*;}
+-keep class zhongan.com.idbankcard.idcard.Util{*;}
+-keep class zhongan.com.idbankcard.bankcard.util.Util{*;}
+-keep class zhongan.com.sdkManager.ZAIDBankCardSDKManager{*;}
+-keep class zhongan.com.idbankcard.idcard.IDCardScanActivity{*;}
+-keep class zhongan.com.idbankcard.idcard.OCRCallBack{*;}
+-keep class zhongan.com.idbankcard.bankcard.BankCardScanActivity{*;}
+-keep class com.zhongan.sdkauthcheck.model.**{*;}
+-keep class zhongan.com.idbankcard.idcard.model.** {*;}
+-keep class com.zhongan.liveness.ZALivenessSDK{*;}
+-keep class com.zhongan.liveness.util.ConUtil{*;}
+-keep class com.zhongan.liveness.model.**{*;}
+-keep class com.zhongan.liveness.R{*;}
+-keep class com.zhongan.liveness.LivenessActivity{*;}
+-keep class com.megvii.**{*;}
+-keep class com.zhongan.security.** {*;}
+-keep class * implements android.os.Parcelable {
+   public static final android.os.Parcelable$Creator *;
+ }
+
+ -keep class com.tencent.mm.opensdk.** {
+ *;
+ }
+
+ -keep class com.tencent.wxop.** {
+ *;
+ }
+
+ -keep class com.tencent.mm.sdk.** {
+ *;
+ }

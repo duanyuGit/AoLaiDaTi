@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+
+
+  <ImageView
+      android:id="@+id/iv_banner"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:scaleType="centerCrop"
+      android:src="@drawable/banner"/>
+
+  <TextView
+      android:id="@+id/tv_service"
+      android:layout_width="match_parent" android:layout_height="50dp"
+      android:layout_marginLeft="12dp"
+      android:gravity="center_vertical"
+      android:text="打开辅助服务"
+      android:textColor="@android:color/holo_red_light"
+      android:textSize="20sp"/>
+
+  <TextView
+      android:id="@+id/tv_open_window"
+      android:layout_width="match_parent" android:layout_height="50dp"
+      android:layout_marginLeft="12dp"
+      android:gravity="center_vertical"
+      android:text="开启悬浮窗"
+      android:textColor="@android:color/holo_red_light"
+      android:textSize="20sp"/>
+
+  <TextView
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginLeft="12dp"
+      android:layout_marginTop="20dp"
+      android:gravity="center_vertical"
+      android:text="@string/dati_way_step"
+      android:textColor="@android:color/black"
+      android:textSize="12sp"/>
+
+</LinearLayout>

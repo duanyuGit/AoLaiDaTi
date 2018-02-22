@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/shape_rect_bg_white"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="20dp">
+
+  <RelativeLayout android:id="@+id/rl_top" android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+  >
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/aolai_tip"
+        android:layout_toLeftOf="@+id/iv_close"
+        android:layout_marginRight="20dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="30dp" android:layout_height="30dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerInside" android:src="@drawable/icon_close_check_version"
+    />
+
+  </RelativeLayout>
+
+
+  <LinearLayout
+      android:id="@+id/monk_relative_root"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/rl_top"
+      android:orientation="vertical"
+      android:paddingRight="20dp"
+  >
+
+
+    <TextView
+        android:id="@+id/tv_platform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tv_sougo_da_an"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_rect_bg_red"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp" android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:text="搜狐旺仔："
+        android:textColor="@android:color/white"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="百度蛋哥"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_baidu_da_an"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_rect_bg_blue"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" android:paddingTop="5dp"
+        android:text="百度蛋哥："
+        android:textColor="@android:color/white"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="UC"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_uc_da_an"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_rect_bg_green"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" android:paddingTop="5dp"
+        android:text="UC："
+        android:textColor="@android:color/white"/>
+
+  </LinearLayout>
+
+
+</RelativeLayout>

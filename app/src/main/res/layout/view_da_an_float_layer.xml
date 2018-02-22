@@ -1,0 +1,31 @@
+<!-- 拼团浮层 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+  <LinearLayout
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:background="@drawable/shape_rect_bg_black_75_corner_8"
+      android:gravity="center_horizontal"
+      android:orientation="vertical"
+      android:paddingLeft="7dp" android:paddingRight="9dp">
+
+
+    <TextView android:id="@+id/tv_baidu"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="百度蛋哥：" android:textColor="@android:color/white"
+        android:textSize="12sp"/>
+    <TextView android:id="@+id/tv_sogo"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="搜狗旺仔：" android:textColor="@android:color/white"
+        android:textSize="12sp"/>
+    <TextView android:id="@+id/tv_uc"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="UC" android:textColor="@android:color/white"
+        android:textSize="12sp"/>
+    <TextView android:id="@+id/tv_other"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textColor="@android:color/white" android:textSize="12sp"/>
+  </LinearLayout>
+</LinearLayout>
+

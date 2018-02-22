@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'packer'
+
+
+android {
+  signingConfigs {
+    release {
+      keyAlias KEY_ALIAS
+      keyPassword KEY_PASSWORD
+      storeFile file(STORE_FILE_JKS)
+      storePassword STORE_PASSWORD
+      v2SigningEnabled false
+    }
+  }
+
+  compileSdkVersion COMPILE_SDK_VERSION as int
+  buildToolsVersion BUILD_TOOL_SVERSION
+
+  defaultConfig {
+    applicationId APPLICATION_ID
+    minSdkVersion MIN_SDK_VERSION as int
+    targetSdkVersion TARGET_SDK_VERSION as int
+    versionCode VERSION_CODE as int
+    versionName VERSION_NAME
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+      signingConfig signingConfigs.release
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+  android {
+    lintOptions {
+      abortOnError false
+      disable "ResourceType"
+    }
+  }
+}
+
+packer {
+  checkSigningConfig = true
+  checkZipAlign = true
+  archiveNameFormat = 'DaTi-${flavorName}-${buildType}-v${versionName}-${versionCode}'
+}
+
+repositories {
+  flatDir {
+    dirs 'libs'
+  }
+}
+
+dependencies {
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'com.zhouyou:rxeasyhttp:2.0.5'
+  compile 'com.mcxiaoke.gradle:packer-helper:1.0.9'
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'com.android.support:appcompat-v7:23.1.1'
+  compile 'com.google.code.gson:gson:2.2.4'
+  compile 'com.baidu.mobstat:mtj-sdk:latest.integration'
+  compile project(path: ':float_lib')
+}
+

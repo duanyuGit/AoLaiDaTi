@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">奥莱答题助手</string>
+    <string name="main_name">奥莱答题助手</string>
+    <string name="accessibility_description">启动奥莱答题助手服务。</string>
+    <string name="service_name">奥莱答题助手</string>
+    <string name="open_service_title">必须开启辅助服务才能正常使用</string>
+    <string name="open_service_button">打开辅助服务</string>
+    <string name="tips">找到[奥莱答题助手]，然后开启服务即可</string>
+    <string name="donate_title">打赏开发者</string>
+    <string name="donate_summary">如果这个工具能帮到你，可以打赏我哦</string>
+    <string name="about_title">奥莱答题助手网页版</string>
+    <string name="dati_page">打开答题悬浮窗</string>
+    <string name="about_url">https://www.bainianaolai.com/Z/show/platform/toutiao</string>
+    <string name="dati_url">https://www.bainianaolai.com/Z/show/platform/toutiao</string>
+    <string name="agreement_title">免责声明</string>
+    <string name="dati_way">答题攻略：</string>
+    <string name="dati_way_step">答题攻略：\n1.打开辅助服务\n2.开启答题悬浮窗(需要开启悬浮窗权限)\n3.打开对应的"答题"APP，就可以坐等“答案”了！(支持西瓜(今日头条)，花椒，芝士，冲顶)\n4.最后一刻如果大伙没有选择答案，自动选择UC的答案(特别注意只支持6.5.6之前的今日头条，其它平台不支持。我会在群文件里面放入今日头条的老版本)\n5.如果答题神器闪退，彻底杀死程序，然后再重新开启\n6.技术讨论群:721481202</string>
+    <string name="dati_notice">注意：\n点击“开启答题悬浮窗”之后会自动跳转至悬浮窗开启界面，手动开启即可。但是目前测试的VIVO X9，跳转页面错误，需要在设置－更多设置－权限管理－权限－悬浮窗－找到“奥莱答题助手”手动开启即可，如果其它手机如果出现此问题，同样需要手动开启。否则应用放到后台之后，悬浮窗也会消失))</string>
+
+
+</resources>
