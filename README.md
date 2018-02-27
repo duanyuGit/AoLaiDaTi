@@ -1,3 +1,7 @@
+
+# AoLaiDaTi
+百年奥莱答题助手 直播答题辅助工具，唯一一个不是OCR的实现，速度秒杀OCR（只写了 冲顶大会/芝士超人/百万赢家/西瓜视频的实现，其实按照这种方式可以实现所有平台）
+=======
     
 ![Alt text](./应用截图.jpg)
 
@@ -142,3 +146,4 @@ MAC/Linux：adb shell dumpsys activity | grep "mFocusedActivity"
 https://www.jianshu.com/p/f8620db0f0ca
 
 ## QQ技术讨论群：721481202
+
